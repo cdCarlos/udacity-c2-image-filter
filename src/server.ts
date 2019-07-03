@@ -4,10 +4,9 @@ import { Request, Response } from "express";
 import {
   filterImageFromURL,
   deleteLocalFiles,
-  isImageTypeSupported
+  isImageTypeSupported,
+  validateURL
 } from "./util/util";
-
-const URL = require("url-parse");
 
 (async () => {
   // Init the Express application
@@ -20,42 +19,38 @@ const URL = require("url-parse");
   app.use(bodyParser.json());
 
   app.get("/filteredimage", async (req: Request, res: Response) => {
-    const { image_url } = req.query;
+    let imageURL: string = req.query.image_url;
 
-    if (!image_url) {
+    if (!imageURL) {
       return res
         .status(400)
         .send({ message: "Image URL required or malformed" });
     }
 
-    if (!isImageTypeSupported(image_url.toLowerCase())) {
+    if (!isImageTypeSupported(imageURL.toLowerCase())) {
       return res.status(400).send({ message: "Image type not supported" });
     }
 
-    let url: string;
-
-    try {
-      url = new URL(image_url);
-    } catch (e) {
-      console.error("ERROR::parseURL >> ", e);
-      return res.status(400).send({ message: "Malformed image URL" });
+    imageURL = validateURL(imageURL);
+    if (!imageURL) {
+      return res.status(400).send({ message: "Image URL malformed" });
     }
 
-    let filtered_image: string;
+    let filteredImagePath: string;
     try {
-      filtered_image = await filterImageFromURL(url.toString());
+      filteredImagePath = await filterImageFromURL(imageURL);
     } catch (err) {
       console.error("ERROR::applyFilter >> ", err);
       return res.status(204).send({ message: "Error while filtering image" });
     }
 
-    res.download(filtered_image, async err => {
+    res.download(filteredImagePath, async err => {
       if (err) {
         res.status(204).end();
       }
 
       try {
-        await deleteLocalFiles([filtered_image]);
+        await deleteLocalFiles([filteredImagePath]);
       } catch (err) {
         console.error("ERROR::deleteTempFiles >> ", err);
       }
