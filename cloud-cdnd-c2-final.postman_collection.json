@@ -11,10 +11,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/api/v0/image/filter?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
-					"protocol": "http",
+					"raw": "{{host}}/api/v0/image/filter?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
 					"host": [
-						"{{HOST}}"
+						"{{host}}"
 					],
 					"path": [
 						"api",
@@ -38,10 +37,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/",
-					"protocol": "http",
+					"raw": "{{host}}/",
 					"host": [
-						"{{HOST}}"
+						"{{host}}"
 					],
 					"path": [
 						""
@@ -56,10 +54,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/api/v0",
-					"protocol": "http",
+					"raw": "{{host}}/api/v0",
 					"host": [
-						"{{HOST}}"
+						"{{host}}"
 					],
 					"path": [
 						"api",
@@ -94,9 +91,9 @@
 	],
 	"variable": [
 		{
-			"id": "1df3d31a-de30-494b-a3d0-f1228dd8713c",
-			"key": "HOST",
-			"value": "localhost:8082",
+			"id": "5bbd5931-0bc1-4ee8-b3c4-e20bd0a45d11",
+			"key": "host",
+			"value": "http://localhost:8082",
 			"type": "string"
 		}
 	]
