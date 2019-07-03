@@ -41,14 +41,11 @@ export async function deleteLocalFiles(files: Array<string>) {
 }
 
 export function isImageTypeSupported(imagePath: string): boolean {
-  if (
+  return (
     imagePath.endsWith(".png") ||
     imagePath.endsWith(".jpg") ||
     imagePath.endsWith(".jpeg")
-  ) {
-    return true;
-  }
-  return false;
+  );
 }
 
 /**
