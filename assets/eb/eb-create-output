@@ -1,0 +1,26 @@
+Enter Environment Name
+(default is udacity-c2-image-filter-dev):
+Enter DNS CNAME prefix
+(default is udacity-c2-image-filter-dev):
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 2): 2
+Uploading udacity-c2-image-filter/app-cd7e-190702_210238.zip to S3. This may take a while.
+Upload Complete.
+Environment details for: udacity-c2-image-filter-dev
+  Application name: udacity-c2-image-filter
+  Region: us-east-2
+  Deployed Version: app-cd7e-190702_210238
+  Environment ID: e-ccczd3barz
+  Platform: arn:aws:elasticbeanstalk:us-east-2::platform/Node.js running on 64bit Amazon Linux/4.9.2
+  Tier: WebServer-Standard-1.0
+  CNAME: udacity-c2-image-filter-dev.us-east-2.elasticbeanstalk.com
+  Updated: 2019-07-03 03:02:42.559000+00:00
+Printing Status:
+2019-07-03 03:02:41    INFO    createEnvironment is starting.
+....
+2019-07-03 03:06:07    INFO    Application available at udacity-c2-image-filter-dev.us-east-2.elasticbeanstalk.com.
+2019-07-03 03:06:07    INFO    Successfully launched environment: udacity-c2-image-filter-dev
