@@ -40,6 +40,15 @@ export async function deleteLocalFiles(files: Array<string>) {
   }
 }
 
+/**
+ * This function verifies that the given image path in string format is a supported image format.
+ * Supported images types are: PNG, JPG, JPEG.
+ *
+ * @param {String} imagePath Absolute path from drive or web server (URL).
+ *
+ * @returns {Boolean} Weather or not the image is a supported format.
+ *
+ */
 export function isImageTypeSupported(imagePath: string): boolean {
   return (
     imagePath.endsWith(".png") ||
