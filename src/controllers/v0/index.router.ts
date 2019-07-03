@@ -19,13 +19,13 @@ router.get("/image/filter", async (req: Request, res: Response) => {
     return res.status(400).send({ message: "Image URL required or malformed" });
   }
 
-  if (!isImageTypeSupported(imageURL.toLowerCase())) {
-    return res.status(400).send({ message: "Image type not supported" });
-  }
-
   imageURL = validateURL(imageURL);
   if (!imageURL) {
     return res.status(400).send({ message: "Image URL malformed" });
+  }
+
+  if (!isImageTypeSupported(imageURL.toLowerCase())) {
+    return res.status(422).send({ message: "Image type not supported" });
   }
 
   let filteredImagePath: string;
