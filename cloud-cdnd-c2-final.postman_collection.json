@@ -14,9 +14,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/",
+							"raw": "{{server}}/",
 							"host": [
-								"{{host}}"
+								"{{server}}"
 							],
 							"path": [
 								""
@@ -31,9 +31,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/v0",
+							"raw": "{{server}}/api/v0",
 							"host": [
-								"{{host}}"
+								"{{server}}"
 							],
 							"path": [
 								"api",
@@ -49,9 +49,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/v0/image/filter?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+							"raw": "{{server}}/api/v0/image/filter?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
 							"host": [
-								"{{host}}"
+								"{{server}}"
 							],
 							"path": [
 								"api",
@@ -162,13 +162,13 @@
 	],
 	"variable": [
 		{
-			"id": "44d7570b-6188-4ed1-81cb-ce6562c1481c",
-			"key": "host",
+			"id": "101f1e24-12ac-45c8-96c8-1e9063922853",
+			"key": "server",
 			"value": "http://localhost:8082",
 			"type": "string"
 		},
 		{
-			"id": "95105a48-fa0e-4177-b7f3-ac8d24416731",
+			"id": "dbb45274-f82e-4321-8c7a-07af4f7a95b5",
 			"key": "eb_server",
 			"value": "http://udacity-c2-image-filter-dev.us-east-2.elasticbeanstalk.com",
 			"type": "string"
