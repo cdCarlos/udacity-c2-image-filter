@@ -1,5 +1,6 @@
 import fs from "fs";
 import Jimp = require("jimp");
+const URL = require("url-parse");
 
 // filterImageFromURL
 // helper function to download, filter, and save the filtered image locally
@@ -44,4 +45,22 @@ export function isImageTypeSupported(url: string): boolean {
     return true;
   }
   return false;
+}
+
+/**
+ * This function verifies that the given string is a valid URL.
+ *
+ * @param {String} url  String value representing a URL.
+ *
+ * @returns {String|undefined} URL.
+ *
+ */
+export function validateURL(url: string): string {
+  try {
+    url = new URL(url).toString();
+  } catch (e) {
+    console.error("ERROR::parseURL >> ", e);
+    url = undefined;
+  }
+  return url;
 }
