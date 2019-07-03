@@ -6,65 +6,74 @@
 	},
 	"item": [
 		{
-			"name": "/api/v0/image/filter",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/v0/image/filter?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"v0",
-						"image",
-						"filter"
-					],
-					"query": [
-						{
-							"key": "image_url",
-							"value": "https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg"
+			"name": "Local",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								""
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v0/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v0/image/filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v0/image/filter?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v0",
+								"image",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "image_url",
+									"value": "https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "/",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/v0/",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/v0",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"v0"
-					]
-				}
-			},
-			"response": []
+			"name": "EB",
+			"item": []
 		}
 	],
 	"event": [
@@ -91,7 +100,7 @@
 	],
 	"variable": [
 		{
-			"id": "5bbd5931-0bc1-4ee8-b3c4-e20bd0a45d11",
+			"id": "bfd4843f-c6da-4a44-bdd4-07f4698ea9b1",
 			"key": "host",
 			"value": "http://localhost:8082",
 			"type": "string"
