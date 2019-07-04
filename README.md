@@ -1,40 +1,29 @@
 # Udagram Image Filtering Microservice
 
-## Tasks
+This microservice exposes and endpoint which uses a query parameter to download an image from a public URL, filter the image, and return the filtered image to the client.
 
-### Setup Node Enviornment
+## Usage
 
-You'll need to create a new node server. Open a new terminal within the project directory and run:
+### Installation
 
-1. Initialize a new project: `npm i`
-2. run the development server with `npm run dev`
+Once you have downloaded the [repository](https://github.com/cdCarlos/udacity-c2-image-filter.git), open a terminal inside the repository and install the dependencies as follows:
 
-### Create a new endpoint in the server.ts file
-
-The starter code has a task for you to complete an endpoint in `./src/server.ts` which uses query paramater to download an image from a public URL, filter the image, and return the result.
-
-We've included a few helper functions to handle some of these concepts and we're importing it for you at the top of the `./src/server.ts`  file.
-
-```typescript
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+```bash
+$ npm install
 ```
 
-### Deploying your system
+### Development Server
 
-Follow the process described in the course to `eb init` a new application and `eb create` a new enviornment to deploy your image-filter service! Don't forget you can use `eb deploy` to push changes.
+To spin up a development server and start testing the app use:
 
-## Stand Out (Optional)
+```bash
+$ npm run dev
+```
 
-### Refactor the course RESTapi
+## REST API
 
-If you're feeling up to it, refactor the course RESTapi to make a request to your newly provisioned image server.
+- [Image Filter](docs/restapi/image/filter/get.md): `GET /api/v0/image/filter`
 
-### Authentication
+### Postman
 
-Prevent requests without valid authentication headers.
-> !!NOTE if you choose to submit this, make sure to add the token to the postman collection and export the postman collection file to your submission so we can review!
-
-### Custom Domain Name
-
-Add your own domain name and have it point to the running services (try adding a subdomain name to point to the processing server)
-> !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
+If you load into Postman `cloud-cdnd-c2-final.postman_collection.json` you should be able to test exposed endpoint locally and once it has been deployed to a remote server.
